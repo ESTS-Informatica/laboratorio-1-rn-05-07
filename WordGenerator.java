@@ -13,6 +13,7 @@ public class WordGenerator
     public WordGenerator(){
         words = new ArrayList<String>();
         random = new Random();
+        fillArrayList();
     }
     public void fillArrayList(){
         words.add("boolean");
@@ -32,7 +33,7 @@ public class WordGenerator
         words.add("int");
     }
     public String generateWord(){
-        int index = random.nextInt(words.size() + 1 );
+        int index = random.nextInt(words.size() + 1);
         return words.get(index);
     }
     public void addWord(String word){

@@ -11,13 +11,23 @@ public class WordGuessingGame
     private String guessedWord;
     private int numberOfTries;
     private InputReader reader;
+    private WordGenerator wordGenerator;
     
     public WordGuessingGame(){
-        hiddenWord = "abc";
-        guessedWord = "___";
-        numberOfTries = 0;
         reader = new InputReader();
+        wordGenerator = new WordGenerator();
+        hiddenWord = wordGenerator.generateWord();
+        guessedWord = "";
+        initializeGuessedWord();
+        numberOfTries = 0;
     }
+    
+    public void initializeGuessedWord() {
+        for(int i = 0; i<hiddenWord.length(); i++) {
+            guessedWord+="_";
+        }
+    }
+    
     public String getHiddenWord(){
         return hiddenWord;
     }
@@ -53,6 +63,6 @@ public class WordGuessingGame
         
         do { guess(); } while(guessedWord.trim().equals(hiddenWord.trim()) == false);
         
-        System.out.println("Correto! A palavra era " + hiddenWord + "com " + getNumberOfTries() + "tentativas.");
+        System.out.println("Correto! A palavra era " + hiddenWord + " com " + getNumberOfTries() + " tentativas.");
     }
 }
