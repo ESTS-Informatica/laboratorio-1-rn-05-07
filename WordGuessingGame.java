@@ -16,10 +16,6 @@ public class WordGuessingGame
     public WordGuessingGame(){
         reader = new InputReader();
         wordGenerator = new WordGenerator();
-        hiddenWord = wordGenerator.generateWord();
-        guessedWord = "";
-        initializeGuessedWord();
-        numberOfTries = 0;
     }
     
     public void initializeGuessedWord() {
@@ -56,6 +52,14 @@ public class WordGuessingGame
         }
         
         numberOfTries++;
+    }
+    
+    
+    public void reset(){
+        hiddenWord = wordGenerator.generateWord();
+        guessedWord = "";
+        initializeGuessedWord();
+        numberOfTries = 0;
     }
     
     public void play(){
