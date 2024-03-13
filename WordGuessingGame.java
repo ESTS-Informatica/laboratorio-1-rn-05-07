@@ -16,4 +16,16 @@ public class WordGuessingGame
         guessedWord = "___";
         numberOfTries = -1;
     }
+    public String getHiddenWord(){
+        return hiddenWord;
+    }
+    public String getGuessedWord(){
+        return guessedWord;
+    }
+    public int getNumberOfTries(){
+        return numberOfTries;
+    }
+    public void showGuessedWord(){
+        System.out.println(guessedWord);
+    }
 }
