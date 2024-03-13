@@ -22,7 +22,8 @@ public class FullGame
         do{
             game.reset();
             game.play();
-            response = reader.getChar("Deseja continuar a jogar(Note que se responder outra coisa alem de N sera contabilizado como desejo de jogar):");
+            response = reader.getChar("Deseja continuar a jogar?\n(Note que se responder outra coisa para além de N, o jogo continuará.): ");
+            System.out.println("\n");
             if(response == 'N'){
                 playAgain = false;
             }
